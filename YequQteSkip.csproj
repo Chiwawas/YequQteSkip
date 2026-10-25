@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>YequQteSkip</AssemblyName>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="lib/**;dump/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="lib/core/BepInEx.Core.dll" Private="false" />
+    <Reference Include="lib/core/BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="lib/core/0Harmony.dll" Private="false" />
+    <Reference Include="lib/core/Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="lib/core/Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="lib/interop/*.dll" Private="false" />
+  </ItemGroup>
+</Project>
