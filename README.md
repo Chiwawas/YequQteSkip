@@ -17,6 +17,10 @@
 
 不读写存档。
 
+## 致谢
+
+谢谢 [mystia-steward-companion（掌柜助手）](https://github.com/blockshy/mystia-steward-companion)。读它代码时才知道这一关可以绕过去，思路是从那儿来的。本 mod 没有使用它的代码，拦截的位置也不同。
+
 ## 自己编译
 
 需要 .NET 6 SDK。仓库里不带任何游戏或 BepInEx 的 dll，编译前自己从装好 BepInEx 的游戏目录拷：
