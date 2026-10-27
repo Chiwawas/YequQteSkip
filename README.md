@@ -4,10 +4,17 @@
 
 ## 安装
 
-1. 先给游戏装好 **BepInEx 6（IL2CPP 版，be.783 上测过）**，启动一次游戏让它生成 `BepInEx/interop`。
+1. 先给游戏装好 **BepInEx 6（IL2CPP 版，be.783 上测过）**。它不在 BepInEx 的 GitHub Releases 里（那里是 5.x），要去构建站下：[BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.783](https://builds.bepinex.dev/projects/bepinex_be/783/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.783%2Bc58c42d.zip)。解压到游戏 exe 所在的那一层，启动一次游戏让它生成 `BepInEx/interop`。第一次启动会联网下载 Unity 库，要等几分钟，进到主界面再关。
 2. 到 [Releases](../../releases) 下载 `YequQteSkip.dll`。
 3. 放进 `游戏目录/BepInEx/plugins/YequQteSkip/YequQteSkip.dll`。
 4. 启动游戏，日志里出现「夜雀之歌跳过已加载」就成了。
+
+### 装不上？
+
+- **找不到对的版本**：文件名里要同时有 `Unity.IL2CPP` 和 `win-x64`。带 `Mono` 的、5.x 的都不认。
+- **没生成 `BepInEx/interop`**：
+  - 看 `BepInEx` 文件夹里有没有 `LogOutput.log`。没有的话，说明 BepInEx 没加载：检查 `winhttp.dll`、`doorstop_config.ini` 是不是和游戏 exe 在同一层，再看看杀毒软件有没有把 `winhttp.dll` 删掉。
+  - 有日志但还是没生成：多半是第一次启动时 Unity 库没下载下来。开着加速器重新启动一次，等它跑完。
 
 想恢复原样：删掉这个 dll，或者把 `BepInEx/config/xu.yequ.qteskip.cfg` 里的 `Enabled` 改成 `false`。
 
